@@ -3,7 +3,16 @@
 > {%= description %}
 
 ## Install
-{%= include("install") %}
+
+{%= docs("install") %}
+
+## Options
+
+{%= docs("options") %}
+
+## Examples
+
+{%= docs("examples") %}
 
 ## Author
  * {%= author.name %}
