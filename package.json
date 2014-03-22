@@ -23,7 +23,7 @@
     "name": "Brian Woodward",
     "url": "http://github.com/doowb/"
   },
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/doowb/find-path/issues"
   },
