@@ -39,6 +39,13 @@
     "tasks": [
       "readme"
     ],
+    "data": {
+      "author": {
+        "twitter": "doowb",
+        "github": "doowb",
+        "linkedin": "woodwardbrian"
+      }
+    },
     "plugins": [
       "gulp-format-md"
     ],
