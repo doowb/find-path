@@ -1,35 +1,31 @@
+const endsWith = require('path-ends-with');
 
+module.exports = function(filename, paths, options = {}) {
+  const matches = [];
 
-module.exports = function (search, paths, options) {
-
-  options = options || {};
-  options.all = options.all || false;
-
-  // filter paths
-  var filtered = filter(search, paths);
-
-  if (options.all) {
-    return filtered;
-  } else {
-    // find shortest segment
-    return findShortest(filtered);
+  if (options.shortest === true) {
+    paths = sortPaths(paths);
+    options.all = false;
   }
-};
 
-function filter (search, paths) {
-  var results = [];
-  for (var i = 0; i < paths.length; i++) {
-    if (paths[i].indexOf(search) !== -1) {
-      results.push(paths[i]);
+  for (const filepath of paths) {
+    if (endsWith(filepath, filename)) {
+      matches.push(filepath);
+      if (options.all !== true) {
+        break;
+      }
     }
   }
-  return results;
-}
 
-function findShortest(paths) {
-  var sortFn = function (a, b) {
-    return a.split('/').length > b.split('/').length;
-  };
-  paths.sort(sortFn);
-  return paths[0];
+  return matches;
+};
+
+function sortPaths(paths) {
+  return paths.sort((a, b) => {
+    const alen = a.split(/[\\/]/).length;
+    const blen = b.split(/[\\/]/).length;
+    if (alen < blen) return -1;
+    if (alen > blen) return 1;
+    return 0;
+  });
 }

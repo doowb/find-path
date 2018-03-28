@@ -1,46 +1,49 @@
 {
   "name": "find-path",
+  "description": "Gets the first matching path from an array of file paths.",
   "version": "0.1.0",
-  "description": "Given a search string and a list of file paths, find the closest path.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha -R spec"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/doowb/find-path.git"
-  },
-  "keywords": [
-    "docs",
-    "documentation",
-    "generate",
-    "generator",
-    "markdown",
-    "templates",
-    "verb"
-  ],
-  "author": {
-    "name": "Brian Woodward",
-    "url": "http://github.com/doowb/"
-  },
-  "license": "MIT",
+  "homepage": "https://github.com/doowb/find-path",
+  "author": "Brian Woodward (http://github.com/doowb)",
+  "repository": "doowb/find-path",
   "bugs": {
     "url": "https://github.com/doowb/find-path/issues"
   },
-  "dependencies": {},
-  "devDependencies": {
-    "chai": "~1.8.1",
-    "mocha": "~1.17.0",
-    "verb": "~0.1.10"
-  },
-  "homepage": "https://github.com/doowb/find-path",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/doowb/find-path/blob/master/LICENSE-MIT"
-    }
+  "license": "MIT",
+  "files": [
+    "index.js"
   ],
+  "main": "index.js",
   "engines": {
-    "node": ">=0.8"
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "path-ends-with": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "~1.17.0"
+  },
+  "keywords": [
+    "filter",
+    "find",
+    "match",
+    "path",
+    "resolve"
+  ],
+  "verb": {
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }
