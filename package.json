@@ -1,7 +1,7 @@
 {
   "name": "find-path",
   "description": "Gets the first matching path from an array of file paths.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/doowb/find-path",
   "author": "Brian Woodward (http://github.com/doowb)",
   "repository": "doowb/find-path",
