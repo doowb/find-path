@@ -1,17 +1,18 @@
 const endsWith = require('path-ends-with');
 
-module.exports = function(filename, paths, options = {}) {
+module.exports = function(filename, paths, options) {
+  const opts = Object.assign({}, options);
   const matches = [];
 
-  if (options.shortest === true) {
+  if (opts.shortest === true) {
     paths = sortPaths(paths);
-    options.all = false;
+    opts.all = false;
   }
 
   for (const filepath of paths) {
     if (endsWith(filepath, filename)) {
       matches.push(filepath);
-      if (options.all !== true) {
+      if (opts.all !== true) {
         break;
       }
     }
