@@ -1,3 +1,5 @@
+'use strict';
+
 const endsWith = require('path-ends-with');
 
 module.exports = function(filename, paths, options) {
